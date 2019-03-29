@@ -13,5 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\interact_with_us">
+      <UniqueIdentifier>{58ed5369-12ee-4181-a720-a2ddd9342af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\interact_with_us\polynomial">
+      <UniqueIdentifier>{551934d1-babd-4291-983a-c0b5519276d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="polynomial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interact_with_us.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="polynomial.c">
+      <Filter>Source Files\interact_with_us\polynomial</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="readDoubleClearly.c">
+      <Filter>Source Files\interact_with_us</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
