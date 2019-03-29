@@ -35,7 +35,7 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="readDoubleClearly.c">
+    <ClCompile Include="readNumClearly.c">
       <Filter>Source Files\interact_with_us</Filter>
     </ClCompile>
   </ItemGroup>

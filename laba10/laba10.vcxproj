@@ -120,7 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
-    <ClCompile Include="readDoubleClearly.c" />
+    <ClCompile Include="readNumClearly.c" />
     <ClCompile Include="polynomial.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
