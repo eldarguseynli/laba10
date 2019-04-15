@@ -1,13 +1,5 @@
 #include "interact_with_us.h"
 
-int readDoubleClearly(double *x) {
-	if (!(scanf("%lf", x))) {
-		clear(); return 0;
-	}
-	clear();
-	return 1;
-}
-
 int readIntClearly(int *n) {
 	if (!(scanf("%d", n))) {
 		clear(); return 0;

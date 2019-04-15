@@ -1,32 +1,34 @@
 #include "polynomial.h"
 #include <malloc.h>
+#include <math.h>
 
 void create_poly(term **head, int n) { //create polynomial of n degree
 	
-	double k; //coefficient
+	int k; //coefficient
 	while (1) {
 		for (int i = 0; i < n + 1; i++) {
 			printf("Input the coefficient of x^%d: ", i);
-			if (!readDoubleClearly(&k)) { puts("\nYou had to inputed number. Input it correctly again.\n"); i--; continue; }
-			if (k) addFront(head, i, k);
-		}
+			if (!readIntClearly(&k)) { puts("\nYou had to inputed number. Input it correctly again.\n"); i--; continue; } //if invalid value try to continue
+			if (k) addFront(head, i, k);																				  //the input of coefficient
+		}																												  //else add it to the list
 		if (*head) return; else { puts("\nYou should have inputed at least 1 term with non-zero coefficient\n"); continue; }
 	}
 }
 
 void print_poly(term *head) {
 	term *p = head;
+	if (head->k < 0) printf("-");
 	while (p->next) {
-		printf("%.2lfx^%d", p->k, p->deg);
-		printf(" + ");					   
-		p = p->next;					//print consequently all terms in polynomial but the last term without "+"
+		printf("%dx^%d", abs(p->k), p->deg);
+		if (p->next->k >= 0) printf(" + "); else printf(" - ");
+		p = p->next;  //print consequently all terms in polynomial but the last term without "+"
 	}
-	printf("%.2lf", p->k);
-	printf("\n");
+	if (p->deg == 0) printf("%d", abs(p->k)); else printf("%dx^%d", abs(p->k), p->deg); //handle the situation when we have coefficient near zero degree term or
+	printf("\n");														      
 }
 
 
-void addFront(term **head, unsigned int deg, double k){ //add the front element
+void addFront(term **head, unsigned int deg, int k){ //add the front element
 	term *p = malloc(sizeof(term));
 	p->deg = deg;
 	p->k = k;
@@ -53,7 +55,7 @@ void match_poly(term **head_of_new, term *head1, term *head2) {
 		if (tmp1->deg > tmp2->deg) tmp20 = tmp2; //if deg1 > deg2 => go to the next element in the first list from the end
 		else if (tmp1->deg < tmp2->deg) tmp10 = tmp1; //if deg1 < deg2 => go to the next element in the second list from the end
 		else {
-			if(tmp1->k && tmp2->k) addFront(head_of_new, tmp1->deg, tmp1->k + tmp2->k); //then add this term to the new list and make iteration in 2 list simultaneously
+			addFront(head_of_new, tmp1->deg, tmp1->k + tmp2->k); //then add this term to the new list and make iteration in 2 list simultaneously
 			tmp10 = tmp1; tmp20 = tmp2;
 		}
 
@@ -61,7 +63,7 @@ void match_poly(term **head_of_new, term *head1, term *head2) {
 	}
 }
 
-void free_poly(term *poly) {
+void free_poly(term *poly) { //free the memory from list`s elements
 	
 	term *tmp;
 	while (poly != NULL)

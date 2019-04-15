@@ -16,7 +16,7 @@
     <Filter Include="Source Files\interact_with_us">
       <UniqueIdentifier>{58ed5369-12ee-4181-a720-a2ddd9342af0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\interact_with_us\polynomial">
+    <Filter Include="Source Files\polynomial">
       <UniqueIdentifier>{551934d1-babd-4291-983a-c0b5519276d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -30,7 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="polynomial.c">
-      <Filter>Source Files\interact_with_us\polynomial</Filter>
+      <Filter>Source Files\polynomial</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
